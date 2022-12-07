@@ -49,7 +49,6 @@ const BookingModal = ({ open, handleClose, currentService, selectedDate, refetch
             phone,
             address
         }
-        console.log('bk', bookingInfo)
         fetch('http://localhost:5000/booking', {
             method: 'POST',
             headers: {
@@ -61,12 +60,12 @@ const BookingModal = ({ open, handleClose, currentService, selectedDate, refetch
             .then(data => {
                 if (data?.insertedId) {
                     toast.success(`${name} appointment booked by ${user?.displayName} on ${date} at ${slot}`)
+                    refetch()
+                    handleClose()
                 } else {
                     toast.error(`You have already booked ${name} on ${date}`)
                 }
             })
-        refetch()
-        handleClose()
     };
 
     return (

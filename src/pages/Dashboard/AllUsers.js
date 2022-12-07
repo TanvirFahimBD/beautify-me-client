@@ -101,9 +101,9 @@ const AllUsers = () => {
                     <TableHead>
                         <TableRow>
                             <TableCell>No. </TableCell>
-                            <TableCell align="right">Email</TableCell>
-                            <TableCell align="right">Admin </TableCell>
-                            <TableCell align="right">Action</TableCell>
+                            <TableCell align="left">Email</TableCell>
+                            <TableCell align="left">Role </TableCell>
+                            <TableCell align="left">Action</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -117,63 +117,3 @@ const AllUsers = () => {
 };
 
 export default AllUsers;
-
-{/* <Paper sx={{ width: '100%', overflow: 'hidden' }}>
-                <TableContainer sx={{ maxHeight: 440 }}>
-                    <Table stickyHeader aria-label="sticky table">
-                        <TableHead>
-                            <TableRow>
-                                {columns.map((column) => (
-                                    <TableCell
-                                        key={column.id}
-                                        align={column.align}
-                                        style={{ minWidth: column.minWidth }}
-                                    >
-                                        {column.label}
-                                    </TableCell>
-                                ))}
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {users
-                                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                                .map((row, index) => {
-                                    return (
-                                        <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
-                                            {columns.map((column) => {
-                                                let value;
-                                                if (column.id === '_id') {
-                                                    value = index + 1;
-                                                }
-                                                else {
-                                                    value = row['email'];
-                                                }
-
-                                                return (
-                                                    <TableCell key={column.id} align={column.align} >
-                                                        {
-                                                            ((column.id === 'admin' || column.id === 'delete') && row['role'] === undefined)
-                                                                ?
-                                                                <Button variant='contained' onClick={() => handleAction(column.id, value)}
-                                                                >{column.id}</Button>
-                                                                :
-                                                                value}
-                                                    </TableCell>
-                                                );
-                                            })}
-                                        </TableRow>
-                                    );
-                                })}
-                        </TableBody>
-                    </Table>
-                </TableContainer>
-                <TablePagination
-                    rowsPerPageOptions={[5, 10, 20]}
-                    component="div"
-                    count={users.length}
-                    rowsPerPage={rowsPerPage}
-                    page={page}
-                    onPageChange={handleChangePage}
-                    onRowsPerPageChange={handleChangeRowsPerPage}
-                />
-            </Paper> */}

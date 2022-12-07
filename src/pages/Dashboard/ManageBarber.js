@@ -64,9 +64,9 @@ const ManageBarber = () => {
                 .then(data => {
                     if (data.deletedCount) {
                         toast.success(`${deleteBarber.email} deleted successfully`)
+                        refetch()
                     }
                 })
-            refetch()
         }
     }
 

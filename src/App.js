@@ -20,12 +20,12 @@ import Login from './pages/Login/Login/Login';
 import Register from './pages/Login/Register/Register';
 import RequireAdmin from './pages/Login/RequireAdmin/RequireAdmin';
 import RequireAuth from './pages/Login/RequireAuth/RequireAuth';
-import Profile from './pages/Profile/Profie';
+import Profile from './pages/Profile/Profile';
 import Footer from './pages/shared/Footer/Footer';
 import Header from './pages/shared/Header/Header';
 import NoPageFound from './pages/shared/NoPageFound/NoPageFound';
 
-//TODO: live host client
+//TODO: Dashboard MORE FEATURES COMING - admin add new service, admin add worker role etc.
 
 function App() {
   return (
@@ -39,11 +39,7 @@ function App() {
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/account" element={<Account />} />
-          <Route path="/bookings" element={
-            <RequireAuth>
-              <Appointments />
-            </RequireAuth>
-          } />
+          <Route path="/bookings" element={<RequireAuth><Appointments /></RequireAuth>} />
           <Route path="/dashboard" element={
             <RequireAuth>
               <Dashboard />

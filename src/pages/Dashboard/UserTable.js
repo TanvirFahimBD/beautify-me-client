@@ -13,18 +13,18 @@ const UserTable = ({ userInfo, index, handleDelete, handleAdmin }) => {
             <TableCell component="th" scope="row">
                 {index + 1}
             </TableCell>
-            <TableCell align="right">
+            <TableCell align="left">
                 {email}
             </TableCell>
-            <TableCell align="right">
+            <TableCell align="left">
                 {
                     (role !== 'admin') && <Button variant='contained' onClick={() => handleAdmin(email)}>Admin</Button>
                 }
                 {
-                    (role === 'admin') && <p>Already Admin</p>
+                    (role === 'admin') && <p>Admin</p>
                 }
             </TableCell>
-            <TableCell align="right">
+            <TableCell align="left">
                 <Button variant='contained' onClick={() => handleDelete(email)}>Delete</Button>
             </TableCell>
         </TableRow >

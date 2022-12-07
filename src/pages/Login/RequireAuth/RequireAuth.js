@@ -9,9 +9,9 @@ import 'react-toastify/dist/ReactToastify.css';
 const RequireAuth = ({ children }) => {
     const [user, loading] = useAuthState(auth)
     const location = useLocation()
-    const handleEmailVerify = () => {
-        toast.success(`Verification email sent to ${user?.email}`)
-    }
+    // const handleEmailVerify = () => {
+    //     toast.success(`Verification email sent to ${user?.email}`)
+    // }
 
     if (loading) {
         return <Loading />
@@ -21,17 +21,17 @@ const RequireAuth = ({ children }) => {
         return <Navigate to='/login' state={{ from: location }} replace />
     }
 
-    if (!user?.emailVerified) {
-        return (
-            <div className='my-5'>
-                <h1>Verify Your Email</h1>
-                <p className='text-danger my-3'>Check spam folder. You have not verified your email yet. </p>
-                <p className='text-danger my-3'>Verify Email & reload this page. </p>
-                <Button variant='contained' onClick={handleEmailVerify}>Send Verification Email</Button>
-                <ToastContainer />
-            </div>
-        )
-    }
+    // if (!user?.emailVerified) {
+    //     return (
+    //         <div className='my-5'>
+    //             <h1>Verify Your Email</h1>
+    //             <p className='text-danger my-3'>Check spam folder. You have not verified your email yet. </p>
+    //             <p className='text-danger my-3'>Verify Email & reload this page. </p>
+    //             <Button variant='contained' onClick={handleEmailVerify}>Send Verification Email</Button>
+    //             <ToastContainer />
+    //         </div>
+    //     )
+    // }
 
     return children;
 };

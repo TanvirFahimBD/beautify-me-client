@@ -31,7 +31,9 @@ const AllAppointment = ({ selectedDate }) => {
     return (
         <div>
             <h1 className='my-5 text-primary'>Booking on {formattedDate} </h1>
+
             <Grid container spacing={2} className='my-5 p-5'>{services?.map(service => <Service key={service._id} service={service} handleOpen={handleOpen} />)}</Grid>
+
             {currentService && <BookingModal currentService={currentService} open={open} handleClose={handleClose} selectedDate={selectedDate} refetch={refetch} />}
         </div >
     );
