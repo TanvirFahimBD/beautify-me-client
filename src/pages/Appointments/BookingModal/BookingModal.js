@@ -65,6 +65,7 @@ const BookingModal = ({ open, handleClose, currentService, selectedDate, refetch
                     toast.error(`You have already booked ${name} on ${date}`)
                 }
             })
+        refetch()
         handleClose()
     };
 

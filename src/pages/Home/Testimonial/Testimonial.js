@@ -66,8 +66,8 @@ const Testimonial = () => {
                                     <p>California</p>
                                 </div>
                             </div>
-                            <div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A quasi aut expedita, nemo mollitia dolore dolorem magni ad eaque soluta magnam, laborum cumque necessitatibus culpa praesentium molestias illum deserunt! Sequi!</p>
+                            <div className='text-start'>
+                                <p>Watson ipsum dolor sit amet, consectetur adipisicing elit. A quasi aut expedita, nemo mollitia dolore dolorem magni ad eaque soluta magnam, laborum cumque necessitatibus culpa praesentium molestias illum deserunt! Sequi!</p>
                             </div>
                         </Card>
                     </Grid>
@@ -90,8 +90,8 @@ const Testimonial = () => {
                                     <p>California</p>
                                 </div>
                             </div>
-                            <div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A quasi aut expedita, nemo mollitia dolore dolorem magni ad eaque soluta magnam, laborum cumque necessitatibus culpa praesentium molestias illum deserunt! Sequi!</p>
+                            <div className='text-start'>
+                                <p>Harry ipsum dolor sit amet, consectetur adipisicing elit. A quasi aut expedita, nemo mollitia dolore dolorem magni ad eaque soluta magnam, laborum cumque necessitatibus culpa praesentium molestias illum deserunt! Sequi!</p>
                             </div>
                         </Card>
                     </Grid>
@@ -114,8 +114,8 @@ const Testimonial = () => {
                                     <p>California</p>
                                 </div>
                             </div>
-                            <div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A quasi aut expedita, nemo mollitia dolore dolorem magni ad eaque soluta magnam, laborum cumque necessitatibus culpa praesentium molestias illum deserunt! Sequi!</p>
+                            <div className='text-start'>
+                                <p>John ipsum dolor sit amet, consectetur adipisicing elit. A quasi aut expedita, nemo mollitia dolore dolorem magni ad eaque soluta magnam, laborum cumque necessitatibus culpa praesentium molestias illum deserunt! Sequi!</p>
                             </div>
                         </Card>
                     </Grid>

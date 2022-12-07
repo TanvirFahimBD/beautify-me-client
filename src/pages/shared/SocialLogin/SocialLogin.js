@@ -12,16 +12,12 @@ const SocialLogin = () => {
     const navigate = useNavigate()
     const location = useLocation()
     const from = location?.state?.from?.pathname || '/';
-    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, user, error] = useSignInWithGoogle(auth);
     const [token] = useToken(user)
 
     let errorElement;
     if (error) {
         errorElement = <p className='text-danger'>{error.message}</p>
-    }
-
-    if (loading) {
-        return <Loading />
     }
 
     if (token) {

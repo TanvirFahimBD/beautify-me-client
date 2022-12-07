@@ -4,7 +4,6 @@ import Banner from '../Banner/Banner';
 import Info from '../Info/Info';
 import OurServices from '../OurServices/OurServices';
 import OurSolution from '../OurSolution/OurSolution';
-import SendMessage from '../SendMessage/SendMessage';
 import Testimonial from '../Testimonial/Testimonial';
 
 const Home = () => {
@@ -16,7 +15,6 @@ const Home = () => {
             <OurSolution />
             <Appointment />
             <Testimonial />
-            <SendMessage />
         </>
     );
 };

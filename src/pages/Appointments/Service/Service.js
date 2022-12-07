@@ -33,7 +33,7 @@ const Service = ({ service, handleOpen }) => {
                     <Button className='my-2' disabled={slots.length === 0} variant='contained'
                         onClick={() =>
                             handleOpen(service)}
-                    >Book Appointment</Button>
+                    >Book {name}</Button>
                 </CardContent>
             </Card>
         </Grid>

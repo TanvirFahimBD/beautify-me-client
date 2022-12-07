@@ -9,10 +9,21 @@ const Profile = () => {
         return <Loading />
     }
     return (
-        <div>
-            <img className='my-5' src={user?.photoURL} alt="" width={200} height={200} style={{ borderRadius: '50%' }} />
-            <h3>{user?.displayName}</h3>
-            <p className='my-2'>Email: {user?.email}</p>
+        <div className='d-flex '>
+            <div className='w-50'>
+                <img src='https://i.ibb.co/LvcW3mp/Resume-folder-bro.png' alt="" width={800} height={800} />
+            </div>
+            <div className='w-50 text-start ms-5'>
+                <img className='my-5' src={user?.photoURL} alt="" width={200} height={200} style={{ borderRadius: '50%' }} />
+                <div className='text-left'>
+                    <h1 className='my-4 text-primary' >Welcome</h1>
+                    <h3>{user?.displayName}</h3>
+                    <p className='my-4 font-weight-bold'><span className=''> Email: </span>{user?.email}</p>
+                    <p className='my-4'><span className='font-weight-bold'> Age: </span></p>
+                    <p className='my-4'><span className='font-weight-bold'> Profession:</span></p>
+                    <p className='my-4'><span className='font-weight-bold'> Address: </span></p>
+                </div>
+            </div>
         </div>
     );
 };

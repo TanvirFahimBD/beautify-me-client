@@ -23,6 +23,10 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import useAdmin from '../../hooks/useAdmin';
 import Loading from '../shared/Loading/Loading';
 
+//TODO: admin - all appointment
+//TODO: admin - paid appointment
+//TODO: admin - unpaid appointment
+
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -88,23 +92,23 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
         }),
     }),
 );
-//TODO: complete admin - all appointment
+
 const Dashboard = () => {
     const [user] = useAuthState(auth)
     const [admin, adminLoading] = useAdmin(user)
     const userMenu = [
         { name: 'Home Page', link: '/', icon: '🏠' },
-        { name: 'My Appointment', link: 'myappointment', icon: '📑' },
-        { name: 'My history', link: 'myhistory', icon: '🕛' },
-        { name: 'My Review', link: 'myreview', icon: '👩‍💻' },
+        { name: 'My Appointment', link: 'my-appointment', icon: '📑' },
+        { name: 'My history', link: 'my-history', icon: '🕛' },
+        { name: 'My Reviews', link: 'my-reviews', icon: '👩‍💻' },
         { name: 'Logout', link: '/login', icon: '🗑' }
     ]
 
     const AdminMenu = [
         { name: 'Home Page', link: '/', icon: '🏠' },
-        { name: 'All Users', link: 'allusers', icon: '👥' },
-        { name: 'Add Barber', link: 'addbarber', icon: '➕' },
-        { name: 'Manage Barber', link: 'manageBarber', icon: '✂' },
+        { name: 'All Users', link: 'all-users', icon: '👥' },
+        { name: 'Add Barber', link: 'add-barber', icon: '➕' },
+        { name: 'Manage Barber', link: 'manage-barber', icon: '✂' },
         { name: 'Logout', link: '/login', icon: '🗑' }
     ]
     const [name, setName] = React.useState('')

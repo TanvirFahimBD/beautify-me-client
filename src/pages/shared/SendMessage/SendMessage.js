@@ -14,20 +14,19 @@ const SendMessage = () => {
 
     return (
         <div>
-            <h4>Contact Us</h4>
-            <h2 className='text-primary mb-3'>Stay Connected With Us</h2>
+            <h2 className='my-3'>Contact With Us</h2>
             <div>
                 <form onSubmit={handleMessage}>
-                    <TextField id="outlined-basic" label="Email Address" variant="outlined" onBlur={(e) => setEmail(e.target.value)} />
+                    <TextField id="outlined-basic" label="Email Address" variant="outlined" onBlur={(e) => setEmail(e.target.value)} required />
                     <br />
-                    <TextField id="outlined-basic" className='my-3' label="Subject" variant="outlined" />
+                    <TextField id="outlined-basic" className='my-3' label="Subject" variant="outlined" required />
                     <br />
                     <TextField
                         id="outlined-multiline-static"
                         label="Message"
                         multiline
                         rows={4}
-                        defaultValue="Your Message"
+                        defaultValue="Your Message" required
                     />
                     <br />
                     <Button className='my-3' variant="contained" type='submit'>Send Message</Button>

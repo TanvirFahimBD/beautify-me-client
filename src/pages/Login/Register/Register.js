@@ -113,10 +113,10 @@ const Register = () => {
                     <br />
                     <Button type="submit" className='w-100' variant='contained'>Register</Button>
                 </form>
-                <p className='my-2'>Already have account? <Link to='/login' className='text-decoration-none'>Login Now</Link> </p>
+                <p className='my-4'>Already have account? <Link to='/login' className='text-decoration-none'>Login Now</Link> </p>
                 {errorElement && errorElement}
-                <div className='d-flex my-3 w-25'>
-                    <hr className='w-50' />OR <hr className='w-50' />
+                <div className='d-flex my-2 w-25'>
+                    <hr className='w-50' /><span className='mx-2'>OR </span><hr className='w-50' />
                 </div>
                 <SocialLogin />
                 <ToastContainer />

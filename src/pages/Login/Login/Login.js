@@ -92,15 +92,15 @@ const Login = () => {
                     {(errors.password?.type === 'minLength') && <p className='text-danger' role="alert">{errors.password.message}</p>}
                     <br />
                     <br />
-                    <p><Link to='/forgetpassword' className='text-decoration-none'>Forget Password?</Link></p>
+                    <p><Link to='/forget-password' className='text-decoration-none'>Forget Password?</Link></p>
 
                     <Button type="submit" className='w-100' variant='contained'>LogIn</Button>
                 </form>
                 <ToastContainer />
-                <p className='my-2'>Don't have account? <Link to='/register' className='text-decoration-none'>Register Now</Link> </p>
+                <p className='my-4'>Don't have account? <Link to='/register' className='text-decoration-none'>Register Now</Link> </p>
                 {error && errorElement}
-                <div className='d-flex my-3 w-25'>
-                    <hr className='w-50' />OR <hr className='w-50' />
+                <div className='d-flex my-2 w-25'>
+                    <hr className='w-50' /><span className='mx-2'>OR </span><hr className='w-50' />
                 </div>
                 <SocialLogin />
             </div>

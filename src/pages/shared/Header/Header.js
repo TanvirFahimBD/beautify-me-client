@@ -11,7 +11,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Header.css'
 import logo from '../../../utilities/images/icons/logo-haircut.png'
 import auth from '../../../firebase.init';
@@ -20,16 +20,16 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 
 const pages = [
     {
-        title: 'Appointments',
-        link: '/appointments'
+        title: 'Bookings',
+        link: '/bookings'
     },
     {
-        title: 'Pricing',
-        link: '/pricing'
+        title: 'Blogs',
+        link: '/blogs'
     },
     {
-        title: 'Blog',
-        link: '/blog'
+        title: 'Contact Us',
+        link: '/contact-us'
     }
 ];
 
@@ -37,9 +37,11 @@ const settings = [
     { title: 'Profile', link: '/profile' },
     { title: 'Account', link: '/account' },
     { title: 'Dashboard', link: '/dashboard' },
-    { title: 'Logout', link: '/login' }];
+    { title: 'Logout', link: '/login' }
+];
 
 function Header() {
+    const navigate = useNavigate();
     const [user] = useAuthState(auth);
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -47,6 +49,7 @@ function Header() {
     const logout = () => {
         localStorage.removeItem('accessToken');
         signOut(auth);
+        navigate('/login')
     };
 
     const handleOpenNavMenu = (event) => {
@@ -107,7 +110,7 @@ function Header() {
                         </Menu>
                     </Box>
                     <Link to='/' sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
-                        <img className='my-2' src={logo} alt="" width={50} height={50} style={{ borderRadius: '50%' }} />
+                        <img className='my-2 mx-3' src={logo} alt="" width={50} height={50} style={{ borderRadius: '50%' }} />
                     </Link>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page, index) => (
