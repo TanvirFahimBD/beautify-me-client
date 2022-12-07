@@ -42,7 +42,6 @@ const Register = () => {
 
     if (token) {
         toast.success(`Successfully profile created`)
-        console.log('token:', token)
         navigate('/')
     }
 

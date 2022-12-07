@@ -8,7 +8,12 @@ import History from './History';
 
 const MyHistory = () => {
     const [user, loading] = useAuthState(auth)
-    const { data: history, isLoading } = useQuery([user, 'history'], () => fetch(`http://localhost:5000/booking/email/${user.email}`).then(res => res.json()));
+    const { data: history, isLoading } = useQuery([user, 'history'], () => fetch(`https://beautify-me-server.up.railway.app/booking/email/${user.email}`, {
+        headers: {
+            'content-type': 'application/json',
+            authorization: `Bearer ${localStorage.getItem('accessToken')}`,
+        }
+    }).then(res => res.json()));
 
     if (isLoading || loading) {
         return <Loading />

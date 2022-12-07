@@ -7,7 +7,7 @@ const useAdmin = user => {
     const [adminLoading, setAdminLoading] = useState(true)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/user/admin/${user?.email}`, {
+        fetch(`https://beautify-me-server.up.railway.app/user/admin/${user?.email}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

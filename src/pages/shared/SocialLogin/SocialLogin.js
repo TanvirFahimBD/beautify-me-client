@@ -21,7 +21,6 @@ const SocialLogin = () => {
     }
 
     if (token) {
-        console.log('user info', user)
         toast.success('Profile has been created successfully')
         navigate(from, { replace: true })
     }

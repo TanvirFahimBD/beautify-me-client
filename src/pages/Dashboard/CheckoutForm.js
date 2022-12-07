@@ -17,7 +17,7 @@ const CheckoutForm = ({ paymentInfo }) => {
     const [currentPaymentIntent, setCurrentPaymentIntent] = useState("");
 
     useEffect(() => {
-        fetch("http://localhost:5000/create-payment-intent", {
+        fetch("https://beautify-me-server.up.railway.app/create-payment-intent", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -59,10 +59,8 @@ const CheckoutForm = ({ paymentInfo }) => {
 
         if (error) {
             setCardError(error?.message)
-            console.log('[error]', error);
         } else {
             setCardError('')
-            console.log('[PaymentMethod]', paymentMethod);
         }
 
         const { paymentIntent, error: intentError } = await stripe.confirmCardPayment(
@@ -87,7 +85,7 @@ const CheckoutForm = ({ paymentInfo }) => {
             setCardError(intentError?.message)
         } else {
             if (paymentIntent.id) {
-                fetch(`http://localhost:5000/booking/${_id}`, {
+                fetch(`https://beautify-me-server.up.railway.app/booking/${_id}`, {
                     method: 'PATCH',
                     headers: {
                         'content-type': 'application/json',
@@ -104,7 +102,6 @@ const CheckoutForm = ({ paymentInfo }) => {
                         return res.json()
                     })
                     .then(data => {
-                        console.log('data', data)
                     })
             }
             setCurrentPaymentIntent(paymentIntent.id)

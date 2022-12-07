@@ -26,7 +26,7 @@ const ManageBarber = () => {
     const handleClose = () => setOpen(false);
     const navigate = useNavigate()
 
-    const { data: barber, isLoading, refetch } = useQuery('barbers', () => fetch('http://localhost:5000/barber', {
+    const { data: barber, isLoading, refetch } = useQuery('barbers', () => fetch('https://beautify-me-server.up.railway.app/barber', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ const ManageBarber = () => {
     const handleDelete = (dec) => {
         handleClose()
         if (dec) {
-            fetch(`http://localhost:5000/barber/${deleteBarber.email}`, {
+            fetch(`https://beautify-me-server.up.railway.app/barber/${deleteBarber.email}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',

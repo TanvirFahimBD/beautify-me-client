@@ -17,7 +17,7 @@ const AddBarBer = () => {
     const [token] = useToken(user)
     const { register, reset, formState: { errors }, handleSubmit } = useForm();
 
-    const { data: services, isLoading } = useQuery('services', () => fetch('http://localhost:5000/service').then(res => res.json()))
+    const { data: services, isLoading } = useQuery('services', () => fetch('https://beautify-me-server.up.railway.app/service').then(res => res.json()))
 
     const imageStorageKey = '3e4b477c87251cc2ba5c6195f4cd1134';
 
@@ -39,7 +39,7 @@ const AddBarBer = () => {
                         specialty: data.specialty,
                         url: urlData.data.url,
                     }
-                    fetch('http://localhost:5000/barber', {
+                    fetch('https://beautify-me-server.up.railway.app/barber', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -78,7 +78,6 @@ const AddBarBer = () => {
 
     if (token) {
         toast.success(`Successfully profile created`)
-        console.log('token:', token)
         navigate('/')
     }
 

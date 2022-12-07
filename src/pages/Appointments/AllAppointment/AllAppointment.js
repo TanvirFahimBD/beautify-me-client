@@ -21,7 +21,7 @@ const AllAppointment = ({ selectedDate }) => {
     const formattedDate = format(selectedDate, 'PP');
 
     const { data: services, isLoading, refetch } = useQuery(['available', formattedDate],
-        () => fetch(`http://localhost:5000/available?date=${formattedDate}`)
+        () => fetch(`https://beautify-me-server.up.railway.app/available?date=${formattedDate}`)
             .then(res => res.json()))
 
     if (isLoading) {

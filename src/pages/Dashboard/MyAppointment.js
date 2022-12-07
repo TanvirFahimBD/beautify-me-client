@@ -19,7 +19,7 @@ const MyAppointment = () => {
     const [appointment, setAppointment] = useState([])
     const [user] = useAuthState(auth)
     useEffect(() => {
-        fetch(`http://localhost:5000/booking?patient=${user?.email}`, {
+        fetch(`https://beautify-me-server.up.railway.app/booking?patient=${user?.email}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -38,11 +38,11 @@ const MyAppointment = () => {
             .then(data => {
                 setAppointment(data)
             })
-    }, [])
+    }, [navigate, user?.email])
 
     return (
         <div>
-            <h3>You have total {appointment.length} appointment</h3>
+            <h3>You have total {appointment.length} booking</h3>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>

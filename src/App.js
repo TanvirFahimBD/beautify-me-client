@@ -25,8 +25,8 @@ import Footer from './pages/shared/Footer/Footer';
 import Header from './pages/shared/Header/Header';
 import NoPageFound from './pages/shared/NoPageFound/NoPageFound';
 
-//TODO: Dashboard MORE FEATURES COMING - admin add new service, admin add worker role etc.
-
+//TODO: useAdmin, allUsers small issue fix
+//TODO: Dashboard MORE FEATURES COMING - admin crud all appointments, admin add new service, admin add worker role etc.
 function App() {
   return (
     <div className="App">

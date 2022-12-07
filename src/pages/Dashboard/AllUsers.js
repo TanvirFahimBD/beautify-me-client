@@ -17,7 +17,7 @@ import UserTable from './UserTable';
 
 const AllUsers = () => {
     const navigate = useNavigate()
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/user', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://beautify-me-server.up.railway.app/user', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -38,7 +38,7 @@ const AllUsers = () => {
     const handleDelete = (email) => {
         const res = window.confirm(`Do you want to delete ${email} ?`)
         if (res) {
-            fetch(`http://localhost:5000/user/${email}`, {
+            fetch(`https://beautify-me-server.up.railway.app/user/${email}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
@@ -56,7 +56,6 @@ const AllUsers = () => {
                 })
                 .then(data => {
                     if (data) {
-                        console.log('dt', data);
                         refetch()
                         toast.success('User deleted ')
                     }
@@ -65,7 +64,7 @@ const AllUsers = () => {
     }
 
     const handleAdmin = (email) => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://beautify-me-server.up.railway.app/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

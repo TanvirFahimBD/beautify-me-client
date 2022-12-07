@@ -4,7 +4,6 @@ import { Card } from 'react-bootstrap';
 
 const History = ({ his }) => {
     const { treatment, price, review, paid } = his;
-    console.log('his', his)
 
     return (
         <Grid item xs={6} md={4}>

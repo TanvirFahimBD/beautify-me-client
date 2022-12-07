@@ -25,9 +25,6 @@ const Login = () => {
     const [token] = useToken(user)
     const { register, formState: { errors }, handleSubmit } = useForm();
     const onSubmit = (data) => {
-        console.log(data)
-        console.log('email', data.email)
-        console.log('password', data.password)
         signInWithEmailAndPassword(data.email, data.password)
         toast.success(`Successful login ${user?.email}`)
     };
@@ -42,7 +39,6 @@ const Login = () => {
     }
 
     if (token) {
-        console.log('Signed In User:', user.email)
         navigate(from, { replace: true })
     }
 

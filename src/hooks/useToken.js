@@ -7,7 +7,7 @@ const useToken = (user) => {
         const email = user?.user?.email
         const currentUser = { email: email }
         if (email) {
-            fetch(`http://localhost:5000/user/${email}`, {
+            fetch(`https://beautify-me-server.up.railway.app/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -16,7 +16,6 @@ const useToken = (user) => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log('data', data);
                     const accessToken = data.token;
                     if (accessToken) {
                         setToken(accessToken)

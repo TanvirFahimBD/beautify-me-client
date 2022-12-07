@@ -13,7 +13,7 @@ const stripePromise = loadStripe('pk_test_51L6u7WFgsutIdwUugeM7fMavghMBwUs855h9I
 const Payment = () => {
     const navigate = useNavigate()
     const { paymentId } = useParams()
-    const url = `http://localhost:5000/booking/${paymentId}`
+    const url = `https://beautify-me-server.up.railway.app/booking/${paymentId}`
 
     const { data: paymentInfo, isLoading } = useQuery(['paymentInfo', paymentId], () => fetch(url, {
         method: 'GET',

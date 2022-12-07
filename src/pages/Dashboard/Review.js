@@ -12,7 +12,7 @@ const Review = () => {
     const navigate = useNavigate()
     const [review, setReview] = useState('')
     const { reviewId } = useParams()
-    const { data: singleBooking, isLoading } = useQuery(['singleBooking', reviewId], () => fetch(`http://localhost:5000/booking/review/${reviewId}`).then(res => res.json()));
+    const { data: singleBooking, isLoading } = useQuery(['singleBooking', reviewId], () => fetch(`https://beautify-me-server.up.railway.app/booking/review/${reviewId}`).then(res => res.json()));
 
     if (isLoading) {
         return <Loading />
@@ -20,8 +20,7 @@ const Review = () => {
 
     const handleReview = (e) => {
         e.preventDefault();
-        console.log('review', review);
-        fetch(`http://localhost:5000/booking/review/${reviewId}`, {
+        fetch(`https://beautify-me-server.up.railway.app/booking/review/${reviewId}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',
@@ -38,7 +37,6 @@ const Review = () => {
                 return res.json()
             })
             .then(data => {
-                console.log('d', data)
                 if (data.matchedCount) {
                     toast.success('Review added successfully')
                 }

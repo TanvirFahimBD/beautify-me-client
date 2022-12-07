@@ -49,7 +49,7 @@ const BookingModal = ({ open, handleClose, currentService, selectedDate, refetch
             phone,
             address
         }
-        fetch('http://localhost:5000/booking', {
+        fetch('https://beautify-me-server.up.railway.app/booking', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
